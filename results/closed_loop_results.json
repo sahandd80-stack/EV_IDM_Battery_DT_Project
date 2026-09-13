@@ -1,0 +1,119 @@
+{
+  "profiles": {
+    "aggressive": {
+      "params": {
+        "v0": 32.0,
+        "T": 0.7,
+        "s0": 1.5,
+        "a": 2.5,
+        "b": 3.0,
+        "delta": 4.0
+      },
+      "mean_speed_mps": 19.928957897963688,
+      "max_speed_mps": 28.391494329460784,
+      "mean_abs_accel_mps2": 0.9628920171673577,
+      "energy_kwh": 7.732869571644433,
+      "regen_kwh": 2.1940983074296345,
+      "regen_fraction": 0.2837366241731462,
+      "delta_soc_pct": 5.237667728983853,
+      "degradation_pct": 0.2559544054998153,
+      "min_speed_mps": 1.8445127750875294,
+      "max_accel_mps2": 2.423878442953911,
+      "min_accel_mps2": -55.584590473207825,
+      "max_cell_current_a": 884.6133135851368
+    },
+    "sporty": {
+      "params": {
+        "v0": 29.0,
+        "T": 1.0,
+        "s0": 2.0,
+        "a": 2.0,
+        "b": 2.5,
+        "delta": 4.0
+      },
+      "mean_speed_mps": 19.905670848534726,
+      "max_speed_mps": 27.578104153951845,
+      "mean_abs_accel_mps2": 0.6124353264497636,
+      "energy_kwh": 5.559735480994943,
+      "regen_kwh": 1.0058463420866668,
+      "regen_fraction": 0.18091622263774776,
+      "delta_soc_pct": 4.300659817445096,
+      "degradation_pct": 0.20967928068815064,
+      "min_speed_mps": 2.160296625822605,
+      "max_accel_mps2": 1.941071729891327,
+      "min_accel_mps2": -25.145534938159063,
+      "max_cell_current_a": 483.1489993219469
+    },
+    "average": {
+      "params": {
+        "v0": 25.0,
+        "T": 1.5,
+        "s0": 2.5,
+        "a": 1.4,
+        "b": 2.0,
+        "delta": 4.0
+      },
+      "mean_speed_mps": 19.73107994072148,
+      "max_speed_mps": 24.956452111849217,
+      "mean_abs_accel_mps2": 0.2982908249420016,
+      "energy_kwh": 4.1870761692165335,
+      "regen_kwh": 0.3364998477557041,
+      "regen_fraction": 0.08036630673921281,
+      "delta_soc_pct": 3.6330493977512646,
+      "degradation_pct": 0.1750040045260757,
+      "min_speed_mps": 2.5713946924039144,
+      "max_accel_mps2": 1.3637466735670274,
+      "min_accel_mps2": -5.537213406116583,
+      "max_cell_current_a": 47.416498661374064
+    },
+    "cautious": {
+      "params": {
+        "v0": 22.0,
+        "T": 2.0,
+        "s0": 3.5,
+        "a": 1.0,
+        "b": 1.7,
+        "delta": 4.0
+      },
+      "mean_speed_mps": 18.77341433054687,
+      "max_speed_mps": 21.9997583705065,
+      "mean_abs_accel_mps2": 0.18117696983807438,
+      "energy_kwh": 3.405119930600289,
+      "regen_kwh": 0.208372641245455,
+      "regen_fraction": 0.061193921357337026,
+      "delta_soc_pct": 3.013534351378644,
+      "degradation_pct": 0.15727758510361106,
+      "min_speed_mps": 3.0662655920929556,
+      "max_accel_mps2": 0.9719443210354118,
+      "min_accel_mps2": -3.0301676218062257,
+      "max_cell_current_a": 28.896894663269315
+    },
+    "eco": {
+      "params": {
+        "v0": 20.0,
+        "T": 2.4,
+        "s0": 4.0,
+        "a": 0.8,
+        "b": 1.5,
+        "delta": 4.0
+      },
+      "mean_speed_mps": 18.073117921295154,
+      "max_speed_mps": 19.999972016882143,
+      "mean_abs_accel_mps2": 0.10814843806200793,
+      "energy_kwh": 2.8941984772559306,
+      "regen_kwh": 0.11768379432791702,
+      "regen_fraction": 0.04066196401274327,
+      "delta_soc_pct": 2.6159266103931045,
+      "degradation_pct": 0.14405688269706396,
+      "min_speed_mps": 3.837143621477372,
+      "max_accel_mps2": 0.7753359736093923,
+      "min_accel_mps2": -2.5629711569375786,
+      "max_cell_current_a": 23.51746584568063
+    }
+  },
+  "trace": {
+    "duration_s": 1200.0,
+    "n_steps": 12000,
+    "dt": 0.1
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "n_trips": 11,
+  "provenance": "ved_subset_real",
+  "energy": {
+    "pearson_r": -0.7069527526172271,
+    "mape": 1.9654339138288264,
+    "bias_kwh_per_km": 0.30925331857313926,
+    "mean_pred": 0.1449948227779345,
+    "mean_meas": -0.16425849579520482
+  },
+  "degradation": {
+    "pearson_r": 0.0331333951415248,
+    "mape": 8.326858129503504,
+    "bias_pct": 0.08432570595340987,
+    "mean_pred": 0.09745947365179873,
+    "mean_meas": 0.013133767698388882
+  },
+  "mean_regen_fraction": 0.12041256259978962,
+  "per_trip": [
+    {
+      "trip_id": "VED_EV10_T1996_0",
+      "pred_energy_kwh_per_km": 0.17137125767130884,
+      "meas_energy_kwh_per_km": -0.2595191434758201,
+      "pred_degradation_pct": 0.13547314645915404,
+      "meas_degradation_pct": 0.007571404055383993,
+      "regen_fraction": 0.16890237765911406,
+      "distance_km": 13.42294659296205
+    },
+    {
+      "trip_id": "VED_EV10_T2002_1",
+      "pred_energy_kwh_per_km": 0.15807992765897932,
+      "meas_energy_kwh_per_km": -0.23576667006750668,
+      "pred_degradation_pct": 0.11259895639224005,
+      "meas_degradation_pct": 0.014985557248802298,
+      "regen_fraction": 0.14541582784304302,
+      "distance_km": 10.306679365851549
+    },
+    {
+      "trip_id": "VED_EV10_T2010_2",
+      "pred_energy_kwh_per_km": 0.14997008046279656,
+      "meas_energy_kwh_per_km": -0.12423170460186816,
+      "pred_degradation_pct": 0.08495172294655484,
+      "meas_degradation_pct": 0.01702996715246715,
+      "regen_fraction": 0.16707745207939514,
+      "distance_km": 6.171919565943399
+    },
+    {
+      "trip_id": "VED_EV10_T2011_3",
+      "pred_energy_kwh_per_km": 0.1205795935151714,
+      "meas_energy_kwh_per_km": -0.07884277513695798,
+      "pred_degradation_pct": 0.05470941806319372,
+      "meas_degradation_pct": 0.005573780167438891,
+      "regen_fraction": 0.07930187057483082,
+      "distance_km": 3.562978446680836
+    },
+    {
+      "trip_id": "VED_EV455_T1083_4",
+      "pred_energy_kwh_per_km": 0.13597251462876486,
+      "meas_energy_kwh_per_km": -0.16476391868918105,
+      "pred_degradation_pct": 0.08793519156395588,
+      "meas_degradation_pct": 0.00795852169154912,
+      "regen_fraction": 0.1047293335549746,
+      "distance_km": 7.625327885817078
+    },
+    {
+      "trip_id": "VED_EV455_T1100_5",
+      "pred_energy_kwh_per_km": 0.1461365119934738,
+      "meas_energy_kwh_per_km": -0.24369931036367354,
+      "pred_degradation_pct": 0.054602765658062595,
+      "meas_degradation_pct": 0.02356422045920739,
+      "regen_fraction": 0.21447009654955446,
+      "distance_km": 2.662536857919331
+    },
+    {
+      "trip_id": "VED_EV455_T1108_6",
+      "pred_energy_kwh_per_km": 0.11160265975333296,
+      "meas_energy_kwh_per_km": -0.10152673633157164,
+      "pred_degradation_pct": 0.07121145391906214,
+      "meas_degradation_pct": 0.0064084115230839366,
+      "regen_fraction": 0.07661211286094118,
+      "distance_km": 6.445642088969189
+    },
+    {
+      "trip_id": "VED_EV455_T1110_7",
+      "pred_energy_kwh_per_km": 0.15104861018701332,
+      "meas_energy_kwh_per_km": -0.15390969083228598,
+      "pred_degradation_pct": 0.14856409780048638,
+      "meas_degradation_pct": 0.00759547898798596,
+      "regen_fraction": 0.08480305801627185,
+      "distance_km": 19.685360172081506
+    },
+    {
+      "trip_id": "VED_EV455_T1111_8",
+      "pred_energy_kwh_per_km": 0.15660873384271012,
+      "meas_energy_kwh_per_km": -0.14362727716892768,
+      "pred_degradation_pct": 0.1528818253485779,
+      "meas_degradation_pct": 0.023966569065835504,
+      "regen_fraction": 0.0703940084261381,
+      "distance_km": 20.402729528196055
+    },
+    {
+      "trip_id": "VED_EV455_T1113_9",
+      "pred_energy_kwh_per_km": 0.14067948965843458,
+      "meas_energy_kwh_per_km": -0.15592468366411677,
+      "pred_degradation_pct": 0.07227758524254685,
+      "meas_degradation_pct": 0.017437671855927657,
+      "regen_fraction": 0.08324872462370654,
+      "distance_km": 5.229254215359843
+    },
+    {
+      "trip_id": "VED_EV455_T1117_10",
+      "pred_energy_kwh_per_km": 0.15289367118529354,
+      "meas_energy_kwh_per_km": -0.14503154341534324,
+      "pred_degradation_pct": 0.09684804677595187,
+      "meas_degradation_pct": 0.01237986247459582,
+      "regen_fraction": 0.1295833264097162,
+      "distance_km": 8.067255968191713
+    }
+  ]
+}

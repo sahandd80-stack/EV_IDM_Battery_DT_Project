@@ -1,0 +1,8 @@
+# Python dependencies for the EV IDM Battery Digital Twin project.
+# Tested on Python 3.12.14.
+
+numpy>=1.26
+scipy>=1.11
+numba>=0.59
+matplotlib>=3.7
+pandas>=2.0
