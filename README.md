@@ -14,7 +14,7 @@ sensitivity analysis, and external validation on the Vehicle Energy Dataset
 This repository contains **only the code, the input data placeholders, and
 the result JSON files** needed to run the pipeline. It does **not** contain
 the manuscript, the figures, or any LaTeX artefacts — those live in a
-separate bundle.extra raw data used are in "extra data"
+separate bundle. extra raw data used are in "extra data"
 
 ### Code Modules
 
