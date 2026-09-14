@@ -2,8 +2,6 @@
 
 > Research repository accompanying the paper **“Battery-Lifespan-Aware Calibration of the Intelligent Driver Model for Electric Vehicles: A Closed-Loop Digital-Twin Study.”**
 
-**Repository:** https://github.com/sahandd80-stack/EV_IDM_Battery_DT_Project
-
 
 A Python pipeline that calibrates the **Intelligent Driver Model (IDM)** for
 battery-electric vehicles and integrates a **semi-empirical battery
