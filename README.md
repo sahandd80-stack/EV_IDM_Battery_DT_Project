@@ -1,11 +1,27 @@
 # EV IDM Battery Digital Twin
 
+> Research repository accompanying the paper **“Battery-Lifespan-Aware Calibration of the Intelligent Driver Model for Electric Vehicles: A Closed-Loop Digital-Twin Study.”**
+
+**Repository:** https://github.com/sahandd80-stack/EV_IDM_Battery_DT_Project
+
+
 A Python pipeline that calibrates the **Intelligent Driver Model (IDM)** for
 battery-electric vehicles and integrates a **semi-empirical battery
 degradation model** into every stage of an EV digital twin. The pipeline
 runs end-to-end from raw trajectory CSVs to optimised driver parameters,
 sensitivity analysis, and external validation on the Vehicle Energy Dataset
 (VED).
+
+## Relationship to the Paper
+
+This repository contains the computational implementation underlying the study. The code is used for
+data preprocessing, IDM calibration, EV digital-twin simulation, multi-objective optimisation,
+closed-loop driver-profile experiments, sensitivity analysis, VED comparison, and figure generation.
+The manuscript reports results generated from the files stored under `results/`; these JSON outputs are
+the primary traceability layer between reported numbers and executable code.
+
+For publication, the manuscript should point to a fixed Git tag or commit corresponding to the exact
+code/results state used to generate the submitted figures and tables.
 
 ---
 
@@ -52,7 +68,7 @@ traceable to a file.
 | `results/pareto_front.json` | Pareto front across five weight ratios `w_B/w_E ∈ {0.1, 0.3, 1.0, 3.0, 10.0}`. |
 | `results/closed_loop_results.json` | Per-driver metrics (energy, degradation, regen fraction, max cell current) for the five archetypes. |
 | `results/sensitivity_analysis.json` | OAT sensitivity curves and per-parameter elasticities for both objectives. |
-| `results/ved_validation.json` | Per-trip predicted vs measured energy and degradation for the 11 VED Kia Soul EV trips. |
+| `results/ved_validation.json` | Per-trip predicted vs reference energy and degradation for the 11 VED trips; degradation reference values are synthetic unless measured ageing labels are supplied. |
 
 ### Config & Orchestration
 
@@ -71,7 +87,7 @@ traceable to a file.
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/EV_IDM_Battery_DT_Project.git
+git clone https://github.com/sahandd80-stack/EV_IDM_Battery_DT_Project.git
 cd EV_IDM_Battery_DT_Project
 
 # 2. Create a virtual environment (optional but recommended)
@@ -210,7 +226,7 @@ from the real one-pedal driving experiment) are:
 | Eco driver energy per trip | 2.89 kWh (-62.6 %) | `results/closed_loop_results.json` |
 | Aggressive driver degradation per trip | 0.256 % | `results/closed_loop_results.json` |
 | Eco driver degradation per trip | 0.144 % (-43.7 %) | `results/closed_loop_results.json` |
-| VED validation trips | 11 Kia Soul EV trips | `results/ved_validation.json` |
+| VED external-evaluation trips | 11 VED trips | `results/ved_validation.json` |
 
 The relatively high IDM RMSE (compared to the 0.93 m/s typical for NGSIM
 highway data) is expected because the bundled data comes from a one-pedal
@@ -233,8 +249,10 @@ All random seeds are fixed:
 | IDM calibration (Differential Evolution) | 42 |
 | Multi-objective optimisation (Nelder-Mead) | 7 |
 
-Re-running `bash run_all.sh` on the same machine with the same data
-produces bit-identical JSON files.
+Re-running `bash run_all.sh` with the documented software environment, the same input data,
+and the fixed random seeds is intended to reproduce the recorded results closely. Exact
+bit-for-bit identity is not guaranteed across different operating systems, CPU/BLAS stacks,
+or library versions.
 
 ---
 
@@ -331,6 +349,52 @@ pip install -r requirements.txt
 Tested on Python 3.12.14. Python 3.10+ should work.
 
 ---
+
+## Data Sources and Provenance
+
+This repository combines author-provided processing code and derived data with externally sourced datasets.
+The repository is intended to make the computational workflow transparent and reproducible; it does not
+automatically grant redistribution rights for third-party raw datasets.
+
+| Dataset / source | Role in this study | Main signals / fields | Reproducibility note |
+|---|---|---|---|
+| One-pedal driving experiment | IDM calibration | Time, speed, GPS, G-force, leader/follower traces | Raw CSVs may be supplied locally under `data/raw/`; derived segments are bundled |
+| Vehicle Energy Dataset (VED) | External EV-trip evaluation | Vehicle speed, HV battery current, SOC, voltage, GPS/OBD signals | Obtain the original VED data from the upstream repository and place the required weekly files under `data/ved_subset/` |
+| Additional trajectory / driving datasets | Supporting experiments / cross-checks | Dataset-specific trajectory and vehicle-state variables | Keep provenance and original licensing with the source dataset; do not redistribute restricted raw files without permission |
+
+### What Is Actually Evaluated?
+
+- **Trajectory processing / IDM calibration:** based on the real one-pedal driving trajectories and the retained 32 segments.
+- **VED energy comparison:** uses real VED vehicle-trip measurements, but the current implementation compares different energy conventions/sign definitions; this should be described as an external evaluation/comparison rather than a successful accuracy validation.
+- **Battery degradation:** the current pipeline uses a semi-empirical model. The VED degradation reference values are synthetic unless measured capacity-fade/SOH labels are supplied.
+
+The distinction between measured data, derived data, model output, and synthetic reference data is intentional and should be preserved in future releases.
+
+## Reproducibility and Release Practice
+
+For publication, use a tagged repository release (for example `v1.0.0`) corresponding to the exact code/results state used to generate the submitted manuscript. Do not rely only on the moving `main` branch.
+
+Recommended release metadata:
+
+- Python version and operating system used for the reported run
+- exact dependency versions (ideally a lock file or environment export)
+- input-data provenance and dataset versions
+- fixed random seeds
+- Git tag / commit hash used for manuscript figures and tables
+
+## Citation
+
+If you use this repository or its derived results in academic work, please cite the associated paper and the
+upstream datasets from their original publications/repositories.
+
+A `CITATION.cff` file is recommended for the public release so GitHub can expose structured citation metadata.
+
+## Research Use and Scope
+
+This repository implements an offline computational digital-twin workflow. It should not be interpreted as a validated online
+vehicle controller or a production battery-lifetime estimator. In particular, calibration feasibility, physical current limits,
+energy-definition consistency, and independent battery-ageing validation should be checked before using the outputs for deployment
+or lifetime prediction.
 
 ## License
 
