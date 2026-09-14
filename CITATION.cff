@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, data, or results in your research, please cite this repository."
+title: "EV IDM Battery Digital Twin"
+type: software
+authors:
+  - family-names: "Bakhtyarani"
+    given-names: "Sahand"
+repository-code: "https://github.com/sahandd80-stack/EV_IDM_Battery_DT_Project"
+url: "https://github.com/sahandd80-stack/EV_IDM_Battery_DT_Project"
+license: "MIT"
+abstract: >
+  A Python pipeline that calibrates the Intelligent Driver Model (IDM)
+  for battery-electric vehicles and integrates a semi-empirical battery
+  degradation model into an EV digital twin. The pipeline supports
+  trajectory preprocessing, IDM calibration, multi-objective optimization,
+  closed-loop driver evaluation, sensitivity analysis, and external
+  validation using the Vehicle Energy Dataset (VED).
+keywords:
+  - electric vehicles
+  - EV
+  - Intelligent Driver Model
+  - IDM
+  - battery degradation
+  - digital twin
+  - vehicle dynamics
+  - energy consumption
+  - driver behavior
+  - multi-objective optimization
+  - sensitivity analysis
+  - Vehicle Energy Dataset
+  - VED
